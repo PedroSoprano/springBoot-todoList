@@ -13,6 +13,9 @@ RUN apt-get install maven -y
 #gera os .jar
 RUN mvn clean install
 
+#aqui estamos utilizando uma imagem base para ele conseguir rodar a aplicação
+FROM openjdk:17-jdk-slim
+
 EXPOSE 8080
 
 # Esse /target/todolist-1.0.0.jar deve ser gerado ao rodar o comando mvn clean install
